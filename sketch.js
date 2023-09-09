@@ -9,7 +9,7 @@ let world;
 var tower;
 
 function preload() {
-  backgroundImg = loadImage("./assets/background.gif");
+  backgroundImg = loadImage("./assets/background.gif"); 
   towerImage = loadImage("./assets/tower.png");
 
 }
@@ -21,20 +21,17 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
-
+  tower = new Tower(150,350,160,310);
 
   rectMode(CENTER);
   ellipseMode(RADIUS);
-  //Use a new keyword to create a tower object.(challenge 4)
 }
 
 function draw() 
 {
   background(189);
   image(backgroundImg, 0, 0, width, height);
-
+  tower.display();
   Engine.update(engine);
-//display tower(challenge 4)
- 
 }
 
